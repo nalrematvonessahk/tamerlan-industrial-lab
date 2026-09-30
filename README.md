@@ -41,7 +41,12 @@ WebMCP — необязательное прогрессивное улучше�
 
 ## Публикация
 
+Основной публичный сайт: https://tamerlan-industrial-lab.vercel.app/.
+Прямые ссылки: https://tamerlan-industrial-lab.vercel.app/#plant и https://tamerlan-industrial-lab.vercel.app/#pump.
+
 `dist/` — готовый статический сайт. Его можно размещать целиком на Netlify, Vercel или GitHub Pages. Build command не нужен; publish/output directory — `dist`. Отдельные ссылки используют `#plant` и `#pump`, серверные rewrite-правила не требуются. Конфигурация публикации через Sites хранится в `.openai/hosting.json`.
+
+Для Vercel добавлены `vercel.json` (статическая публикация `dist`, без установки и сборки) и `.vercelignore` (исключает локальные проверки и служебные файлы). После входа и привязки проекта повторная production-публикация выполняется из этой папки командой `npx vercel --prod`. Локальная привязка `.vercel/` исключена из Git.
 
 ## Как показать заказчику
 

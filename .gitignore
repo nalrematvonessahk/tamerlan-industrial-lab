@@ -3,3 +3,7 @@ node_modules/
 *.tar.gz
 .sites-runtime/
 .env
+.vercel/
+
+.vercel
+.env*

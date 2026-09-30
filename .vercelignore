@@ -1,0 +1,11 @@
+.git
+.env*
+.vercel
+.openai
+.sites-runtime
+qa-output
+qa.cjs
+README.md
+serve.cjs
+*.tar.gz
+*.zip
