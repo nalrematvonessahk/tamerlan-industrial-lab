@@ -1,0 +1,5 @@
+qa-output/
+node_modules/
+*.tar.gz
+.sites-runtime/
+.env

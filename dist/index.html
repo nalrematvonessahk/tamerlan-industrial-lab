@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101c23">
+  <meta name="description" content="Два интерактивных 3D-кейса Тамерлана Хасенова: промышленный мониторинг и разборка центробежного насоса. Three.js, PBR, GLSL, GSAP.">
+  <title>Industrial Lab · Tamerlan Khassenov</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23121f26'/%3E%3Cpath d='M9 28V17l10-6 12 6v11l-12 6zM9 17l10 6 12-6M19 23v11' fill='none' stroke='%239fddb6' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/controls/OrbitControls.js":"./vendor/OrbitControls.js","three/addons/environments/RoomEnvironment.js":"./vendor/RoomEnvironment.js"}}</script>
+  <script src="./vendor/gsap.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#plant" aria-label="Industrial Lab — главная"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m4 10 12-7 12 7v13l-12 7-12-7zm0 0 12 7 12-7M16 17v13"/></svg><span>INDUSTRIAL<span class="brand-light"> / LAB</span></span></a>
+    <nav aria-label="Демонстрации"><a href="#plant" data-route="plant"><span>01</span> Мониторинг</a><a href="#pump" data-route="pump"><span>02</span> Разборка насоса</a></nav>
+    <button class="about-button" id="about-open">О проекте <span>↗</span></button>
+  </header>
+  <main class="workspace">
+    <section class="stage" aria-label="Интерактивная 3D-сцена">
+      <div id="viewport"></div>
+      <div class="stage-heading"><div class="eyebrow" id="scene-eyebrow">CASE STUDY 01 / DIGITAL TWIN</div><h1 id="scene-title">Промышленный<br>мониторинг.</h1><p id="scene-description">От общего плана — к каждому узлу.</p></div>
+      <div class="scene-meta"><span class="status-dot"></span> <span>ДЕМОНСТРАЦИОННАЯ СЦЕНА</span></div>
+      <button id="back" class="back-button" hidden>← Общий план</button>
+      <div id="labels" class="labels"></div>
+      <div class="view-tools" aria-label="Управление камерой"><button id="reset-view" title="Сбросить камеру" aria-label="Сбросить камеру">⌖</button><button id="auto-rotate" title="Автовращение" aria-label="Автовращение" aria-pressed="false">↻</button><button id="quality" title="Качество рендеринга" aria-label="Высокое качество" aria-pressed="true">HD</button></div>
+      <div class="stage-footer"><span><svg viewBox="0 0 16 20" aria-hidden="true"><rect x="2" y="1" width="12" height="18" rx="6"/><path d="M8 1v6"/></svg> Вращайте · Приближайте · Выбирайте</span><span class="engine-label">WEBGL 2 <i></i> <span id="fps">—</span> FPS</span></div>
+      <div id="loading" class="loading"><span class="loader"></span><p>Собираем сцену</p></div>
+      <div id="error" class="error" hidden><h2>3D-сцена недоступна</h2><p id="error-message">Включите аппаратное ускорение и откройте страницу в браузере с поддержкой WebGL 2.</p><button onclick="location.reload()">Попробовать снова</button></div>
+    </section>
+    <aside id="panel" class="panel" aria-label="Параметры сцены"></aside>
+  </main>
+  <footer class="site-footer"><span>TAMERLAN KHASSENOV <span class="footer-sep">/</span> INTERACTIVE EXPERIENCES</span><span>Three.js · GLSL · GSAP <span class="footer-sep">/</span> 2026</span></footer>
+  <dialog id="about"><button id="about-close" aria-label="Закрыть" class="dialog-close">×</button><div class="eyebrow">ABOUT THE PROJECT</div><h2>Инженерия,<br>которую можно исследовать.</h2><p>Два самостоятельных портфолио-кейса Тамерлана Хасенова. Модели созданы программно специально для этих демонстраций.</p><div class="about-grid"><div><h3>01 / Мониторинг</h3><p>Два уровня сцены, выбор оборудования, GSAP-переходы камеры, GLSL-потоки и процедурное пламя.</p></div><div><h3>02 / Разборка насоса</h3><p>Управляемая разборка, выбор деталей, сечение корпуса, вращение ротора и смена покрытия.</p></div></div><p class="muted">Vanilla JavaScript · Three.js r180 · GSAP 3.13<br>PBR: процедурные карты цвета, шероховатости и нормалей, освещение окружением. Все библиотеки размещены локально.</p><p class="disclaimer">Это визуальные концепты, а не инженерные модели. Показатели синтетические; реального подключения к оборудованию нет.</p><a class="text-link" href="https://github.com/nalrematvonesah" target="_blank" rel="noopener noreferrer">GitHub автора ↗</a></dialog>
+  <noscript>Для интерактивных 3D-демонстраций включите JavaScript.</noscript>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

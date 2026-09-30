@@ -1,0 +1,7 @@
+{
+  "name": "industrial-lab",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Two standalone Three.js portfolio studies",
+  "scripts": { "start": "node serve.cjs", "check": "node --check dist/js/app.js && node --check dist/js/engine.js && node --check dist/js/plant.js && node --check dist/js/pump.js" }
+}
